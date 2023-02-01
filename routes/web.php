@@ -30,10 +30,15 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
     Route::get('/register', function () {
         return Inertia::render('Prototype/register');
     })->name('register');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Prototype/dashboard');
+    })->name('dashboard');
+
+    Route::get('/subscriptionPlan', function () {
+        return Inertia::render('Prototype/SubscriptionPlan');
+    })->name('subscriptionPlan');
+    
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
